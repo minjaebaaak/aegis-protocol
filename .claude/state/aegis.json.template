@@ -1,0 +1,51 @@
+{
+  "version": "4.0",
+  "session": {
+    "id": null,
+    "startTime": null,
+    "phase": "idle",
+    "mode": "normal",
+    "currentLayer": null,
+    "lastActivity": null
+  },
+  "layers": {
+    "layer0": { "name": "Schema Validation", "status": "pending", "lastRun": null, "duration": null, "result": null },
+    "layer1": { "name": "Static Analysis", "status": "pending", "lastRun": null, "duration": null, "result": null },
+    "layer2": { "name": "Unit Test", "status": "pending", "lastRun": null, "duration": null, "result": null },
+    "layer3": { "name": "Integration Test", "status": "pending", "lastRun": null, "duration": null, "result": null },
+    "layer4": { "name": "E2E Test (Local)", "status": "pending", "lastRun": null, "duration": null, "result": null },
+    "layer5": { "name": "E2E Test (Production)", "status": "pending", "lastRun": null, "duration": null, "result": null },
+    "layer6": { "name": "Production Monitoring", "status": "pending", "lastRun": null, "duration": null, "result": null },
+    "layer7": { "name": "Hook Notification", "status": "pending", "lastRun": null, "duration": null, "result": null }
+  },
+  "checklist": {
+    "preCommit": [
+      { "id": "pc1", "task": "Layer 0: DB 스키마 검증", "done": false },
+      { "id": "pc2", "task": "Layer 1: 빌드 성공", "done": false },
+      { "id": "pc3", "task": "Layer 2: 테스트 통과", "done": false }
+    ],
+    "preDeploy": [
+      { "id": "pd1", "task": "Layer 0-4 모두 통과", "done": false },
+      { "id": "pd2", "task": "git push 완료", "done": false },
+      { "id": "pd3", "task": "로컬 API 테스트 완료", "done": false }
+    ],
+    "postDeploy": [
+      { "id": "post1", "task": "Layer 6: 에러 로그 없음", "done": false },
+      { "id": "post2", "task": "Layer 5: 프로덕션 검증 완료", "done": false }
+    ]
+  },
+  "metrics": {
+    "passedLayers": 0,
+    "failedLayers": 0,
+    "runningLayers": 0,
+    "pendingLayers": 8,
+    "totalDuration": 0,
+    "lastFullRun": null
+  },
+  "config": {
+    "autoNotify": true,
+    "parallelExecution": false,
+    "skipOnFail": false,
+    "timeoutPerLayer": 300000
+  }
+}
